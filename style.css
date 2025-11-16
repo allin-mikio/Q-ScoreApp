@@ -31,13 +31,16 @@ body {
 }
 
 .session-block {
-  margin-bottom: 16px;
+  margin-bottom: 20px;
 }
 
 .session-title {
-  margin: 8px 4px;
+  margin: 8px 0 6px;
+  padding: 4px 8px;
   font-size: 14px;
   font-weight: 600;
+  background-color: #e3f2fd;
+  border-radius: 6px;
 }
 
 .games-section {
@@ -76,7 +79,7 @@ body {
 }
 
 .game-row {
-  padding: 6px 0 10px;
+  padding: 6px 0 8px;
   border-bottom: 1px solid #eee;
 }
 
@@ -130,6 +133,8 @@ body {
   padding: 4px 6px;
   font-size: 12px;
   min-width: 36px;
+  flex: 1 1 calc(33% - 8px);
+  text-align: center;
 }
 
 .btn-score.positive {
