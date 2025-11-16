@@ -30,6 +30,16 @@ body {
   padding: 8px;
 }
 
+.session-block {
+  margin-bottom: 16px;
+}
+
+.session-title {
+  margin: 8px 4px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
 .games-section {
   background-color: #fff;
   border-radius: 8px;
