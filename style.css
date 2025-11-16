@@ -27,7 +27,7 @@ body {
 }
 
 .app-main {
-  padding: 8px 8px 96px;
+  padding: 8px;
 }
 
 .games-section {
@@ -55,6 +55,14 @@ body {
 
 .games-container {
   margin-top: 4px;
+}
+
+.summary-section {
+  margin-top: 8px;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 8px 12px 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
 }
 
 .game-row {
@@ -132,17 +140,6 @@ body {
   border-radius: 4px;
   padding: 4px 8px;
   font-size: 12px;
-}
-
-.summary-footer {
-  position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  padding: 8px 12px 10px;
-  background-color: #ffffff;
-  border-top: 1px solid #ddd;
-  box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.08);
 }
 
 .summary-row {
