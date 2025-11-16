@@ -2,7 +2,7 @@
 var GAME_COUNT = 6;
 var SLOTS_PER_GAME = 3;
 var SESSION_COUNT = 3; // 0: 練習1, 1: 練習2, 2: 本番
-var SCORE_CANDIDATES = [11, -13, 5, -7, 2, -3];
+var SCORE_CANDIDATES = [11, 5, 2, -13, -7, -3];
 
 // sessions[sessionIndex][gameIndex][slotIndex] = number | null
 var sessions = [];

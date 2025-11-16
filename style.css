@@ -160,11 +160,12 @@ body {
 .summary-row {
   display: flex;
   justify-content: space-between;
-  font-size: 13px;
-  margin-bottom: 2px;
+  font-size: 14px;
+  margin-bottom: 4px;
 }
 
 .summary-row.total-row {
   font-weight: 700;
-  margin-top: 4px;
+  margin-top: 6px;
+  font-size: 15px;
 }
