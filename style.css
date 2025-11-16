@@ -1,0 +1,158 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background-color: #f5f5f5;
+  color: #222;
+}
+
+.app-header {
+  padding: 12px 16px;
+  background-color: #1976d2;
+  color: #fff;
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.session-label {
+  margin-top: 4px;
+  font-size: 13px;
+  opacity: 0.9;
+}
+
+.app-main {
+  padding: 8px 8px 96px;
+}
+
+.games-section {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+.games-header {
+  display: flex;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 4px 0 8px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.col-label.game-col {
+  width: 80px;
+}
+
+.col-label.score-col {
+  flex: 1;
+}
+
+.games-container {
+  margin-top: 4px;
+}
+
+.game-row {
+  padding: 6px 0 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.game-row:last-child {
+  border-bottom: none;
+}
+
+.game-title {
+  font-size: 13px;
+  margin-bottom: 4px;
+}
+
+.game-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.slot-row {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.slot-display {
+  display: flex;
+  gap: 4px;
+}
+
+.slot {
+  min-width: 40px;
+  padding: 4px 6px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  text-align: center;
+  font-size: 13px;
+  background-color: #fafafa;
+}
+
+.buttons-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-left: 4px;
+}
+
+.btn-score {
+  border: 1px solid #ccc;
+  background-color: #fff;
+  border-radius: 4px;
+  padding: 4px 6px;
+  font-size: 12px;
+  min-width: 36px;
+}
+
+.btn-score.positive {
+  color: #1b5e20;
+  border-color: #81c784;
+  background-color: #e8f5e9;
+}
+
+.btn-score.negative {
+  color: #b71c1c;
+  border-color: #ef9a9a;
+  background-color: #ffebee;
+}
+
+.btn-clear {
+  border: 1px solid #b0bec5;
+  background-color: #eceff1;
+  border-radius: 4px;
+  padding: 4px 8px;
+  font-size: 12px;
+}
+
+.summary-footer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 8px 12px 10px;
+  background-color: #ffffff;
+  border-top: 1px solid #ddd;
+  box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  margin-bottom: 2px;
+}
+
+.summary-row.total-row {
+  font-weight: 700;
+  margin-top: 4px;
+}

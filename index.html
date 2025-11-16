@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ゲーム得点集計（練習1）</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="app-header">
+    <h1>ゲーム得点集計</h1>
+    <div class="session-label">練習1（1チーム分）</div>
+  </header>
+
+  <main class="app-main">
+    <section class="games-section">
+      <div class="games-header">
+        <div class="col-label game-col">Nゲーム目</div>
+        <div class="col-label score-col">獲得得点</div>
+      </div>
+
+      <div id="games-container" class="games-container">
+        <!-- ここに JS で 1〜6ゲームの行を生成 -->
+      </div>
+    </section>
+  </main>
+
+  <footer class="summary-footer">
+    <div class="summary-row"><span>プラス合計</span><span id="plus-sum">0</span></div>
+    <div class="summary-row"><span>マイナス合計</span><span id="minus-sum">0</span></div>
+    <div class="summary-row"><span>Addボーナス</span><span id="add-bonus">0</span></div>
+    <div class="summary-row"><span>Oddsボーナス</span><span id="odds-bonus">0</span></div>
+    <div class="summary-row total-row"><span>合計</span><span id="total-score">0</span></div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
