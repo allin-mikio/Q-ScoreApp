@@ -98,7 +98,7 @@ body {
 
 .game-row {
   padding: 4px 0 4px;
-  border-bottom: 1px solid #eee;
+  border-bottom: 2px solid #999;
 }
 
 .game-row:last-child {
@@ -107,20 +107,24 @@ body {
 
 .game-title {
   font-size: 12px;
-  margin-bottom: 2px;
+  margin-bottom: 0;
   font-weight: 600;
 }
 
 .game-content {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 0;
 }
 
 .game-line-row {
   display: flex;
   align-items: center;
-  margin-bottom: 1px;
+  margin-bottom: 0;
+}
+
+.top-row {
+  margin-bottom: 0;
 }
 
 .game-line-left {
@@ -210,14 +214,14 @@ body {
 .summary-row {
   display: flex;
   justify-content: space-between;
-  font-size: 14px;
+  font-size: 15px;
   margin-bottom: 4px;
 }
 
 .summary-row.total-row {
   font-weight: 700;
   margin-top: 6px;
-  font-size: 15px;
+  font-size: 17px;
 }
 
 .total-negative {
