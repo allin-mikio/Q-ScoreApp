@@ -172,6 +172,37 @@ function init() {
   for (var sessionIndex = 0; sessionIndex < SESSION_COUNT; sessionIndex++) {
     initSession(sessionIndex);
   }
+
+  // All Reset ボタン
+  var allResetBtn = document.getElementById("all-reset-button");
+  if (allResetBtn) {
+    allResetBtn.addEventListener("click", function () {
+      // 全セッション・全ゲーム・全スロットをクリア
+      for (var si = 0; si < SESSION_COUNT; si++) {
+        for (var g = 0; g < GAME_COUNT; g++) {
+          for (var s = 0; s < SLOTS_PER_GAME; s++) {
+            sessions[si][g][s] = null;
+          }
+        }
+      }
+
+      // 表示を再描画
+      for (var si2 = 0; si2 < SESSION_COUNT; si2++) {
+        var container2 = document.getElementById("games-container-" + si2);
+        if (!container2) continue;
+
+        var gameRows = container2.querySelectorAll(".game-row");
+        for (var g2 = 0; g2 < gameRows.length; g2++) {
+          var slots = gameRows[g2].querySelectorAll(".slot");
+          for (var s2 = 0; s2 < slots.length; s2++) {
+            slots[s2].textContent = "-";
+          }
+        }
+
+        recalcAndRenderSummary(si2);
+      }
+    });
+  }
 }
 
 window.addEventListener("DOMContentLoaded", init);
