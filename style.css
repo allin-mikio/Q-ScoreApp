@@ -107,7 +107,7 @@ body {
 .game-line-row {
   display: flex;
   align-items: center;
-  margin-bottom: 2px;
+  margin-bottom: 1px;
 }
 
 .game-line-left {
@@ -149,7 +149,7 @@ body {
   border: 1px solid #ccc;
   background-color: #fff;
   border-radius: 4px;
-  padding: 4px 6px;
+  padding: 7px 6px;
   font-size: 12px;
   min-width: 36px;
   width: 100%;
