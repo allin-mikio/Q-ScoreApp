@@ -149,7 +149,19 @@ body {
   border: 1px solid #ddd;
   text-align: center;
   font-size: 16px;
-  background-color: #fafafa;
+  background-color: #f0f0f0;
+}
+
+.slot-positive {
+  color: #1b5e20;
+  border-color: #81c784;
+  background-color: #e8f5e9;
+}
+
+.slot-negative {
+  color: #b71c1c;
+  border-color: #ef9a9a;
+  background-color: #ffebee;
 }
 
 .buttons-row {
@@ -206,4 +218,8 @@ body {
   font-weight: 700;
   margin-top: 6px;
   font-size: 15px;
+}
+
+.total-negative {
+  color: #b71c1c;
 }

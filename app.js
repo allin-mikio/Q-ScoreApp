@@ -123,6 +123,14 @@ function refreshSlots(sessionIndex, gameIndex, slotElements) {
     var val = slots[s];
     var el = slotElements[s];
     el.textContent = val === null ? "-" : String(val);
+
+    // クラスで色を切り替え
+    el.classList.remove("slot-positive", "slot-negative");
+    if (val > 0) {
+      el.classList.add("slot-positive");
+    } else if (val < 0) {
+      el.classList.add("slot-negative");
+    }
   }
 }
 
@@ -149,7 +157,13 @@ function recalcAndRenderSummary(sessionIndex) {
   document.getElementById("minus-sum-" + sessionIndex).textContent = minusSum;
   document.getElementById("add-bonus-" + sessionIndex).textContent = addBonus;
   document.getElementById("odds-bonus-" + sessionIndex).textContent = odds;
-  document.getElementById("total-score-" + sessionIndex).textContent = total;
+  var totalEl = document.getElementById("total-score-" + sessionIndex);
+  totalEl.textContent = total;
+  if (total < 0) {
+    totalEl.classList.add("total-negative");
+  } else {
+    totalEl.classList.remove("total-negative");
+  }
 }
 
 function initSession(sessionIndex) {
@@ -196,6 +210,7 @@ function init() {
           var slots = gameRows[g2].querySelectorAll(".slot");
           for (var s2 = 0; s2 < slots.length; s2++) {
             slots[s2].textContent = "-";
+            slots[s2].classList.remove("slot-positive", "slot-negative");
           }
         }
 
