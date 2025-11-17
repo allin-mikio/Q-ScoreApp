@@ -127,6 +127,10 @@ body {
   margin-bottom: 0;
 }
 
+.mid-row {
+  margin-top: -10px;
+}
+
 .game-line-left {
   flex: 0 0 120px;
 }
