@@ -22,33 +22,50 @@ function createGameRow(sessionIndex, gameIndex) {
   var row = document.createElement("div");
   row.className = "game-row";
 
-  var title = document.createElement("div");
-  title.className = "game-title";
-  title.textContent = (gameIndex + 1) + "ゲーム目";
-
-  var content = document.createElement("div");
-  content.className = "game-content";
-
-  // スロット表示
-  var slotRow = document.createElement("div");
-  slotRow.className = "slot-row";
-
-  var slotDisplay = document.createElement("div");
-  slotDisplay.className = "slot-display";
-
+  // スロット要素
   var slotElements = [];
   for (var s = 0; s < SLOTS_PER_GAME; s++) {
     var slot = document.createElement("div");
     slot.className = "slot";
     slot.textContent = "-";
-    slotDisplay.appendChild(slot);
     slotElements.push(slot);
   }
 
-  var buttonsRow = document.createElement("div");
-  buttonsRow.className = "buttons-row";
+  // Row1: Gameラベル + プラスボタン
+  var row1 = document.createElement("div");
+  row1.className = "game-line-row top-row";
 
-  // 候補得点ボタン
+  var row1Left = document.createElement("div");
+  row1Left.className = "game-line-left";
+  var title = document.createElement("div");
+  title.className = "game-title";
+  title.textContent = "Game" + (gameIndex + 1);
+  row1Left.appendChild(title);
+
+  var row1Right = document.createElement("div");
+  row1Right.className = "game-line-right buttons-row plus-row";
+
+  // Row2: スロット + マイナスボタン
+  var row2 = document.createElement("div");
+  row2.className = "game-line-row mid-row";
+
+  var row2Left = document.createElement("div");
+  row2Left.className = "game-line-left slot-display";
+  for (var s2 = 0; s2 < slotElements.length; s2++) {
+    row2Left.appendChild(slotElements[s2]);
+  }
+
+  var row2Right = document.createElement("div");
+  row2Right.className = "game-line-right buttons-row minus-row";
+
+  // Row3: CLRボタン（右寄せ）
+  var row3 = document.createElement("div");
+  row3.className = "game-line-row bottom-row";
+
+  var row3Right = document.createElement("div");
+  row3Right.className = "game-line-right clr-container";
+
+  // 候補得点ボタンをプラス／マイナスで分けて配置
   for (var i = 0; i < SCORE_CANDIDATES.length; i++) {
     (function (score) {
       var btn = document.createElement("button");
@@ -62,11 +79,15 @@ function createGameRow(sessionIndex, gameIndex) {
         recalcAndRenderSummary(sessionIndex);
       });
 
-      buttonsRow.appendChild(btn);
+      if (score > 0) {
+        row1Right.appendChild(btn);
+      } else {
+        row2Right.appendChild(btn);
+      }
     })(SCORE_CANDIDATES[i]);
   }
 
-  // クリアボタン（そのゲームのスロットを全部クリア）
+  // CLRボタン（そのゲームのスロットを全部クリア）
   var clearBtn = document.createElement("button");
   clearBtn.className = "btn-clear";
   clearBtn.textContent = "CLR";
@@ -75,15 +96,20 @@ function createGameRow(sessionIndex, gameIndex) {
     refreshSlots(sessionIndex, gameIndex, slotElements);
     recalcAndRenderSummary(sessionIndex);
   });
-  buttonsRow.appendChild(clearBtn);
+  row3Right.appendChild(clearBtn);
 
-  slotRow.appendChild(slotDisplay);
-  slotRow.appendChild(buttonsRow);
+  row1.appendChild(row1Left);
+  row1.appendChild(row1Right);
 
-  content.appendChild(slotRow);
+  row2.appendChild(row2Left);
+  row2.appendChild(row2Right);
 
-  row.appendChild(title);
-  row.appendChild(content);
+  row3.appendChild(document.createElement("div")); // 左側のダミー
+  row3.appendChild(row3Right);
+
+  row.appendChild(row1);
+  row.appendChild(row2);
+  row.appendChild(row3);
 
   return { row: row, slotElements: slotElements };
 }
@@ -136,7 +162,7 @@ function recalcAndRenderSummary(sessionIndex) {
   }
 
   var baseSum = plusSum + minusSum;
-  var addBonus = baseSum === 0 ? 50 : 0;
+  var addBonus = baseSum === 0 && odds > 0 ? 50 : 0;
   var total = odds === 0 ? 0 : (baseSum + addBonus) * odds;
 
   document.getElementById("plus-sum-" + sessionIndex).textContent = plusSum;
