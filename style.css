@@ -53,11 +53,11 @@ body {
 }
 
 .session-title {
-  margin: 8px 0 6px;
-  padding: 4px 8px;
-  font-size: 16px;
+  margin: 9px 0 7px;
+  padding: 6px 10px;
+  font-size: 19px;
   font-weight: 600;
-  background-color: #e3f2fd;
+  background-color: #bbdefb;
   border-radius: 6px;
 }
 
