@@ -17,12 +17,12 @@ body {
 
 .app-header h1 {
   margin: 0;
-  font-size: 18px;
+  font-size: 22px;
 }
 
 .app-version {
   margin-top: 2px;
-  font-size: 11px;
+  font-size: 16px;
   opacity: 0.9;
 }
 
