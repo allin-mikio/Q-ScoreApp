@@ -183,8 +183,8 @@ body {
   grid-template-columns: repeat(3, minmax(0, 1fr));
   margin: 0 0 4px 120px; /* Game/CLR 列(120px)の分だけ右に寄せてボタン列と揃える */
   width: calc(100% - 120px);
-  font-size: 13px;
-  color: #555;
+  font-size: 14px;
+  color: #1b5e20;
   font-weight: 600;
 }
 
