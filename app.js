@@ -150,7 +150,7 @@ function recalcAndRenderSummary(sessionIndex) {
   }
 
   var baseSum = plusSum + minusSum;
-  var addBonus = baseSum === 0 && odds > 0 ? 50 : 0;
+  var addBonus = baseSum === 0 ? 50 : 0;
   var total = odds === 0 ? 0 : (baseSum + addBonus) * odds;
 
   document.getElementById("plus-sum-" + sessionIndex).textContent = plusSum;
